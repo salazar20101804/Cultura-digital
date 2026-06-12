@@ -15,11 +15,11 @@ font-family:Arial, sans-serif;
 
 body{
 background:#000;
-color:white;
+color:#fff;
 overflow-x:hidden;
 }
 
-canvas{
+#matrix{
 position:fixed;
 top:0;
 left:0;
@@ -28,50 +28,96 @@ height:100%;
 z-index:-1;
 }
 
-h1{
+header{
 text-align:center;
-color:#00ff00;
 padding:20px;
-text-shadow:0 0 20px #00ff00;
 }
 
-.contenedor{
+header h1{
+color:#00ff66;
+font-size:3rem;
+text-shadow:0 0 15px #00ff66;
+}
+
+.container{
 width:90%;
 max-width:1200px;
 margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:20px;
+padding-bottom:40px;
 }
 
-.tarjeta{
+.card{
 background:rgba(0,0,0,.8);
-border:2px solid #00ff00;
-border-radius:15px;
 padding:20px;
-margin:20px 0;
-box-shadow:0 0 15px #00ff00;
+border-radius:15px;
 transition:.3s;
 }
 
-.tarjeta:hover{
+.card:hover{
 transform:translateY(-5px);
-box-shadow:0 0 30px #00ff00;
 }
 
-.boton{
-display:inline-block;
-margin-top:15px;
-padding:10px 20px;
-background:#00ff00;
-color:black;
+.green{
+border:2px solid #00ff66;
+box-shadow:0 0 15px #00ff66;
+}
+
+.blue{
+border:2px solid #00bfff;
+box-shadow:0 0 15px #00bfff;
+}
+
+.orange{
+border:2px solid orange;
+box-shadow:0 0 15px orange;
+}
+
+.purple{
+border:2px solid violet;
+box-shadow:0 0 15px violet;
+}
+
+h2{
+margin-bottom:10px;
+}
+
+p{
+margin-bottom:15px;
+line-height:1.6;
+}
+
+.btn{
+display:block;
+text-align:center;
+padding:10px;
+background:#00bfff;
+color:white;
 text-decoration:none;
 border-radius:10px;
 font-weight:bold;
+margin-top:10px;
 }
 
 iframe{
 width:100%;
-height:400px;
-margin-top:15px;
+height:250px;
+border:none;
 border-radius:10px;
+margin-top:15px;
+}
+
+ul{
+list-style:none;
+}
+
+ul li{
+padding:8px;
+margin:5px 0;
+background:rgba(255,255,255,.05);
+border-left:4px solid #00ff66;
 }
 </style>
 </head>
@@ -80,47 +126,101 @@ border-radius:10px;
 
 <canvas id="matrix"></canvas>
 
+<header>
 <h1>CULTURA DIGITAL II</h1>
+</header>
 
-<div class="contenedor">
+<div class="container">
 
-<div class="tarjeta">
-<h2>Proyecto en Figma Make</h2>
-<p>Aquí se explica lo aprendido durante el desarrollo del proyecto.</p>
-
-<a href="LINK_CLASSROOM" class="boton">
-Ver Proyecto
-</a>
-
-<iframe
-src="https://www.youtube.com/embed/VIDEO1">
-</iframe>
+<div class="card green">
+<h2>🚀 Proyecto en Figma Make</h2>
+<p>
+Aquí se explica el proceso de diseño y desarrollo de la página web.
+</p>
+<a class="btn" href="#" target="_blank">Ver Proyecto</a>
 </div>
 
-<div class="tarjeta">
-<h2>Internet</h2>
-<p>Explicación del tema realizada por el integrante.</p>
-
-<a href="LINK_CLASSROOM" class="boton">
-Ver Actividad
-</a>
-
-<iframe
-src="https://www.youtube.com/embed/VIDEO2">
-</iframe>
+<div class="card blue">
+<h2>🌐 Internet</h2>
+<p>
+Explicación realizada por el integrante encargado del tema Internet.
+</p>
+<a class="btn" href="#" target="_blank">Ver Actividad</a>
 </div>
 
-<div class="tarjeta">
-<h2>Seguridad</h2>
-<p>Descripción del trabajo y conclusión.</p>
+<div class="card purple">
+<h2>🛡️ IA</h2>
+<p>
+Información sobre Inteligencia Artificial y su aplicación.
+</p>
+<a class="btn" href="#" target="_blank">Ver Actividad</a>
+</div>
 
-<a href="LINK_CLASSROOM" class="boton">
-Ver Actividad
-</a>
+<div class="card green">
+<h2>🔒 Seguridad</h2>
+<p>
+Conceptos y medidas de seguridad en Internet.
+</p>
+<a class="btn" href="#" target="_blank">Ver Actividad</a>
+</div>
 
-<iframe
-src="https://www.youtube.com/embed/VIDEO3">
-</iframe>
+<div class="card blue">
+<h2>☁️ Nube</h2>
+<p>
+Uso y características de los servicios en la nube.
+</p>
+<a class="btn" href="#" target="_blank">Ver Actividad</a>
+</div>
+
+<div class="card orange">
+<h2>📊 Estadística con Excel</h2>
+<p>
+Lo que aprendimos sobre gráficos, fórmulas y análisis de datos.
+</p>
+<a class="btn" href="#" target="_blank">Ver Actividad</a>
+</div>
+
+<div class="card blue">
+<h2>📁 Hojas de Cálculo sobre el Cambio Climático</h2>
+<a class="btn" href="#" target="_blank">Ver Actividad</a>
+</div>
+
+<div class="card blue">
+<h2>🌎 Google Docs sobre el Cambio Climático</h2>
+<a class="btn" href="#" target="_blank">Ver Actividad</a>
+</div>
+
+<div class="card orange">
+<h2>👥 Integrantes del Equipo</h2>
+
+<ul>
+<li>Salazar Simbrón Cristian Manuel</li>
+<li>Hernández García Jaziel</li>
+<li>García Castillo Juan Ángel</li>
+<li>Herver Castillo Kevin Yafet</li>
+<li>Ochoa Simbrón Oscar Manuel</li>
+<li>Hernández Martínez Alex Calen</li>
+</ul>
+
+<br>
+
+<p><strong>Líder del Equipo:</strong><br>
+Cruz Vázquez Anastacio</p>
+
+<p><strong>Creador de la Página:</strong><br>
+Salazar Simbrón Cristian Manuel</p>
+
+<p><strong>Apoyo y Corrección de Errores:</strong><br>
+Tapia Cabrera Brayan Alexis</p>
+
+</div>
+
+<div class="card purple">
+<h2>🎥 Video Explicativo</h2>
+
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+allowfullscreen></iframe>
+
 </div>
 
 </div>
@@ -132,38 +232,41 @@ const ctx=canvas.getContext("2d");
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 
-const letras="01HTMLCSSJS";
-const fuente=14;
-const columnas=canvas.width/fuente;
+const letras=
+"01HTMLCSSJAVASCRIPTGITHUB";
+const fontSize=14;
+const columns=canvas.width/fontSize;
 
-const gotas=[];
+const drops=[];
 
-for(let i=0;i<columnas;i++){
-gotas[i]=1;
+for(let x=0;x<columns;x++){
+drops[x]=1;
 }
 
-function dibujar(){
+function draw(){
 ctx.fillStyle="rgba(0,0,0,0.05)";
 ctx.fillRect(0,0,canvas.width,canvas.height);
 
-ctx.fillStyle="#00ff00";
-ctx.font=fuente+"px monospace";
+ctx.fillStyle="#00ff66";
+ctx.font=fontSize+"px monospace";
 
-for(let i=0;i<gotas.length;i++){
-const texto=letras[Math.floor(Math.random()*letras.length)];
+for(let i=0;i<drops.length;i++){
 
-ctx.fillText(texto,i*fuente,gotas[i]*fuente);
+const text=
+letras[Math.floor(Math.random()*letras.length)];
 
-if(gotas[i]*fuente>canvas.height &&
+ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+
+if(drops[i]*fontSize>canvas.height &&
 Math.random()>0.975){
-gotas[i]=0;
+drops[i]=0;
 }
 
-gotas[i]++;
+drops[i]++;
 }
 }
 
-setInterval(dibujar,33);
+setInterval(draw,33);
 </script>
 
 </body>
