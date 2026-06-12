@@ -1,273 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cultura Digital II</title>
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
-
-body{
-background:#000;
-color:#fff;
-overflow-x:hidden;
-}
-
-#matrix{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-1;
-}
-
-header{
-text-align:center;
-padding:20px;
-}
-
-header h1{
-color:#00ff66;
-font-size:3rem;
-text-shadow:0 0 15px #00ff66;
-}
-
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-gap:20px;
-padding-bottom:40px;
-}
-
-.card{
-background:rgba(0,0,0,.8);
-padding:20px;
-border-radius:15px;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.green{
-border:2px solid #00ff66;
-box-shadow:0 0 15px #00ff66;
-}
-
-.blue{
-border:2px solid #00bfff;
-box-shadow:0 0 15px #00bfff;
-}
-
-.orange{
-border:2px solid orange;
-box-shadow:0 0 15px orange;
-}
-
-.purple{
-border:2px solid violet;
-box-shadow:0 0 15px violet;
-}
-
-h2{
-margin-bottom:10px;
-}
-
-p{
-margin-bottom:15px;
-line-height:1.6;
-}
-
-.btn{
-display:block;
-text-align:center;
-padding:10px;
-background:#00bfff;
-color:white;
-text-decoration:none;
-border-radius:10px;
-font-weight:bold;
-margin-top:10px;
-}
-
-iframe{
-width:100%;
-height:250px;
-border:none;
-border-radius:10px;
-margin-top:15px;
-}
-
-ul{
-list-style:none;
-}
-
-ul li{
-padding:8px;
-margin:5px 0;
-background:rgba(255,255,255,.05);
-border-left:4px solid #00ff66;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Casillas con historial</title>
+  <style>
+    .info-previa {
+      font-size: 12px;
+      color: gray;
+    }
+    input {
+      margin-bottom: 10px;
+      display: block;
+    }
+  </style>
 </head>
-
 <body>
-
-<canvas id="matrix"></canvas>
-
-<header>
-<h1>CULTURA DIGITAL II</h1>
-</header>
-
-<div class="container">
-
-<div class="card green">
-<h2>🚀 Proyecto en Figma Make</h2>
-<p>
-Aquí se explica el proceso de diseño y desarrollo de la página web.
-</p>
-<a class="btn" href="#" target="_blank">Ver Proyecto</a>
-</div>
-
-<div class="card blue">
-<h2>🌐 Internet</h2>
-<p>
-Explicación realizada por el integrante encargado del tema Internet.
-</p>
-<a class="btn" href="#" target="_blank">Ver Actividad</a>
-</div>
-
-<div class="card purple">
-<h2>🛡️ IA</h2>
-<p>
-Información sobre Inteligencia Artificial y su aplicación.
-</p>
-<a class="btn" href="#" target="_blank">Ver Actividad</a>
-</div>
-
-<div class="card green">
-<h2>🔒 Seguridad</h2>
-<p>
-Conceptos y medidas de seguridad en Internet.
-</p>
-<a class="btn" href="#" target="_blank">Ver Actividad</a>
-</div>
-
-<div class="card blue">
-<h2>☁️ Nube</h2>
-<p>
-Uso y características de los servicios en la nube.
-</p>
-<a class="btn" href="#" target="_blank">Ver Actividad</a>
-</div>
-
-<div class="card orange">
-<h2>📊 Estadística con Excel</h2>
-<p>
-Lo que aprendimos sobre gráficos, fórmulas y análisis de datos.
-</p>
-<a class="btn" href="#" target="_blank">Ver Actividad</a>
-</div>
-
-<div class="card blue">
-<h2>📁 Hojas de Cálculo sobre el Cambio Climático</h2>
-<a class="btn" href="#" target="_blank">Ver Actividad</a>
-</div>
-
-<div class="card blue">
-<h2>🌎 Google Docs sobre el Cambio Climático</h2>
-<a class="btn" href="#" target="_blank">Ver Actividad</a>
-</div>
-
-<div class="card orange">
-<h2>👥 Integrantes del Equipo</h2>
-
-<ul>
-<li>Salazar Simbrón Cristian Manuel</li>
-<li>Hernández García Jaziel</li>
-<li>García Castillo Juan Ángel</li>
-<li>Herver Castillo Kevin Yafet</li>
-<li>Ochoa Simbrón Oscar Manuel</li>
-<li>Hernández Martínez Alex Calen</li>
-</ul>
-
-<br>
-
-<p><strong>Líder del Equipo:</strong><br>
-Cruz Vázquez Anastacio</p>
-
-<p><strong>Creador de la Página:</strong><br>
-Salazar Simbrón Cristian Manuel</p>
-
-<p><strong>Apoyo y Corrección de Errores:</strong><br>
-Tapia Cabrera Brayan Alexis</p>
-
-</div>
-
-<div class="card purple">
-<h2>🎥 Video Explicativo</h2>
-
-<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-allowfullscreen></iframe>
-
-</div>
-
-</div>
-
-<script>
-const canvas=document.getElementById("matrix");
-const ctx=canvas.getContext("2d");
-
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-const letras=
-"01HTMLCSSJAVASCRIPTGITHUB";
-const fontSize=14;
-const columns=canvas.width/fontSize;
-
-const drops=[];
-
-for(let x=0;x<columns;x++){
-drops[x]=1;
-}
-
-function draw(){
-ctx.fillStyle="rgba(0,0,0,0.05)";
-ctx.fillRect(0,0,canvas.width,canvas.height);
-
-ctx.fillStyle="#00ff66";
-ctx.font=fontSize+"px monospace";
-
-for(let i=0;i<drops.length;i++){
-
-const text=
-letras[Math.floor(Math.random()*letras.length)];
-
-ctx.fillText(text,i*fontSize,drops[i]*fontSize);
-
-if(drops[i]*fontSize>canvas.height &&
-Math.random()>0.975){
-drops[i]=0;
-}
-
-drops[i]++;
-}
-}
-
-setInterval(draw,33);
-</script>
-
+  <h2>Formulario con historial</h2>
+  
+  <label>
+    Nombre:
+    <input type="text" id="nombre" placeholder="Escribe tu nombre">
+    <div id="prev-nombre" class="info-previa"></div>
+  </label>
+  
+  <label>
+    Correo:
+    <input type="email" id="correo" placeholder="Escribe tu correo">
+    <div id="prev-correo" class="info-previa"></div>
+  </label>
+  
+  <script>
+    // Función para guardar y mostrar el valor anterior
+    function mantenerHistorial(idInput, idPrevio) {
+      const input = document.getElementById(idInput);
+      const divPrevio = document.getElementById(idPrevio);
+      
+      input.addEventListener("focus", () => {
+        if (input.value) {
+          divPrevio.textContent = "Valor anterior: " + input.value;
+        }
+      });
+      
+      input.addEventListener("blur", () => {
+        if (input.value) {
+          divPrevio.textContent = "Último guardado: " + input.value;
+        }
+      });
+    }
+    
+    // Aplicar la función a cada casilla
+    mantenerHistorial("nombre", "prev-nombre");
+    mantenerHistorial("correo", "prev-correo");
+  </script>
 </body>
 </html>
