@@ -1,56 +1,171 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Casillas con historial</title>
-  <style>
-    .info-previa {
-      font-size: 12px;
-      color: gray;
-    }
-    input {
-      margin-bottom: 10px;
-      display: block;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cultura Digital</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+    padding:20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    color:#00ff66;
+    margin-bottom:20px;
+    text-shadow:0 0 10px #00ff66;
+}
+
+.card{
+    border:2px solid #00ff66;
+    border-radius:10px;
+    padding:20px;
+    margin-bottom:20px;
+    background:#111;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.box{
+    padding:15px;
+    border-radius:10px;
+    background:#151515;
+    border:2px solid #00aaff;
+}
+
+.box h3{
+    margin-bottom:10px;
+}
+
+.links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    padding:12px;
+    border-radius:8px;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.orange{
+    background:#ff6a00;
+}
+
+.blue{
+    background:#00aaff;
+}
+
+.purple{
+    background:#8a2be2;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+</style>
 </head>
+
 <body>
-  <h2>Formulario con historial</h2>
-  
-  <label>
-    Nombre:
-    <input type="text" id="nombre" placeholder="Escribe tu nombre">
-    <div id="prev-nombre" class="info-previa"></div>
-  </label>
-  
-  <label>
-    Correo:
-    <input type="email" id="correo" placeholder="Escribe tu correo">
-    <div id="prev-correo" class="info-previa"></div>
-  </label>
-  
-  <script>
-    // Función para guardar y mostrar el valor anterior
-    function mantenerHistorial(idInput, idPrevio) {
-      const input = document.getElementById(idInput);
-      const divPrevio = document.getElementById(idPrevio);
-      
-      input.addEventListener("focus", () => {
-        if (input.value) {
-          divPrevio.textContent = "Valor anterior: " + input.value;
-        }
-      });
-      
-      input.addEventListener("blur", () => {
-        if (input.value) {
-          divPrevio.textContent = "Último guardado: " + input.value;
-        }
-      });
-    }
-    
-    // Aplicar la función a cada casilla
-    mantenerHistorial("nombre", "prev-nombre");
-    mantenerHistorial("correo", "prev-correo");
-  </script>
+
+<div class="container">
+
+<h1>CULTURA DIGITAL</h1>
+
+<div class="card">
+    <h2>Proyecto en Figma Make</h2>
+    <p>Aplicación sobre Cultura Digital.</p>
+    <br>
+    <a href="https://www.figma.com/" target="_blank" class="btn orange">
+        Ver Proyecto
+    </a>
+</div>
+
+<div class="grid">
+
+    <div class="box">
+        <h3>🌐 Internet</h3>
+        <p>Acceso global a información y comunicación.</p>
+    </div>
+
+    <div class="box">
+        <h3>💻 IA</h3>
+        <p>Automatización y análisis de datos.</p>
+    </div>
+
+    <div class="box">
+        <h3>🔒 Seguridad</h3>
+        <p>Protección de datos y privacidad.</p>
+    </div>
+
+    <div class="box">
+        <h3>☁️ Nube</h3>
+        <p>Almacenamiento y servicios digitales.</p>
+    </div>
+
+</div>
+
+<div class="links">
+
+    <a href="#" target="_blank" class="btn orange">
+        Estadística con Excel
+    </a>
+
+    <a href="#" target="_blank" class="btn blue">
+        Hoja de Cálculo sobre el Cambio Climático
+    </a>
+
+    <a href="#" target="_blank" class="btn blue">
+        Google Docs sobre el Cambio Climático
+    </a>
+
+    <a href="#" target="_blank" class="btn purple">
+        Google Slides - Seguridad en Internet
+    </a>
+
+</div>
+
+<br>
+
+<div class="card">
+    <h2>Grupo de Enlaces</h2>
+
+    <a href="#" class="btn blue">Documento</a>
+    <br>
+
+    <a href="#" class="btn blue">Hoja de Cálculo</a>
+    <br>
+
+    <a href="#" class="btn purple">Presentación</a>
+</div>
+
+</div>
+
 </body>
 </html>
