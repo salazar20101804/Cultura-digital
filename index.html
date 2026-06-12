@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cultura Digital II</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#000;
+color:white;
+overflow-x:hidden;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+h1{
+text-align:center;
+color:#00ff00;
+padding:20px;
+text-shadow:0 0 20px #00ff00;
+}
+
+.contenedor{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+.tarjeta{
+background:rgba(0,0,0,.8);
+border:2px solid #00ff00;
+border-radius:15px;
+padding:20px;
+margin:20px 0;
+box-shadow:0 0 15px #00ff00;
+transition:.3s;
+}
+
+.tarjeta:hover{
+transform:translateY(-5px);
+box-shadow:0 0 30px #00ff00;
+}
+
+.boton{
+display:inline-block;
+margin-top:15px;
+padding:10px 20px;
+background:#00ff00;
+color:black;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+iframe{
+width:100%;
+height:400px;
+margin-top:15px;
+border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<h1>CULTURA DIGITAL II</h1>
+
+<div class="contenedor">
+
+<div class="tarjeta">
+<h2>Proyecto en Figma Make</h2>
+<p>Aquí se explica lo aprendido durante el desarrollo del proyecto.</p>
+
+<a href="LINK_CLASSROOM" class="boton">
+Ver Proyecto
+</a>
+
+<iframe
+src="https://www.youtube.com/embed/VIDEO1">
+</iframe>
+</div>
+
+<div class="tarjeta">
+<h2>Internet</h2>
+<p>Explicación del tema realizada por el integrante.</p>
+
+<a href="LINK_CLASSROOM" class="boton">
+Ver Actividad
+</a>
+
+<iframe
+src="https://www.youtube.com/embed/VIDEO2">
+</iframe>
+</div>
+
+<div class="tarjeta">
+<h2>Seguridad</h2>
+<p>Descripción del trabajo y conclusión.</p>
+
+<a href="LINK_CLASSROOM" class="boton">
+Ver Actividad
+</a>
+
+<iframe
+src="https://www.youtube.com/embed/VIDEO3">
+</iframe>
+</div>
+
+</div>
+
+<script>
+const canvas=document.getElementById("matrix");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+const letras="01HTMLCSSJS";
+const fuente=14;
+const columnas=canvas.width/fuente;
+
+const gotas=[];
+
+for(let i=0;i<columnas;i++){
+gotas[i]=1;
+}
+
+function dibujar(){
+ctx.fillStyle="rgba(0,0,0,0.05)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="#00ff00";
+ctx.font=fuente+"px monospace";
+
+for(let i=0;i<gotas.length;i++){
+const texto=letras[Math.floor(Math.random()*letras.length)];
+
+ctx.fillText(texto,i*fuente,gotas[i]*fuente);
+
+if(gotas[i]*fuente>canvas.height &&
+Math.random()>0.975){
+gotas[i]=0;
+}
+
+gotas[i]++;
+}
+}
+
+setInterval(dibujar,33);
+</script>
+
+</body>
+</html>
